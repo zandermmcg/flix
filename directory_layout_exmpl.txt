@@ -1,0 +1,68 @@
+### EXAMPLE PROJECT DIRECTORY LAYOUT ###
+
+tv-gram/
+│
+├── public/                        # Static assets (100gar images, fonts, favicons, etc.)
+│   ├── images/                    # Images and other static files
+│   ├── favicon.ico
+│
+├── src/                           # Source code (keeps the root clean)
+│   ├── app/                       # App Router (Next.js 13+)
+│   │   ├── layout.tsx             # Root layout
+│   │   ├── page.tsx               # Home page (default route)
+│   │   ├── movie/                 # Example subroute for movie-related pages
+│   │   │   ├── page.tsx           # Movie list page
+│   │   │   └── [id]/page.tsx      # Dynamic movie page (e.g., /movie/1)
+│   │   ├── profile/               # User profile pages
+│   │   │   ├── page.tsx           # Profile page
+│   │   │   └── settings.tsx       # Profile settings page
+│   │   ├── about/                 # About page route
+│   │   │   └── page.tsx           # About page
+│   │   ├── error.tsx              # Custom error page
+│   │   └── loading.tsx            # Loading spinner (can be used for async routes)
+│   │
+│   ├── components/                # Reusable components
+│   │   ├── layout/                # Layout components (Navbar, Footer, Sidebar)
+│   │   │   ├── Navbar.tsx         # Navigation bar component
+│   │   │   ├── Footer.tsx         # Footer component
+│   │   │   └── Sidebar.tsx        # Sidebar component (optional)
+│   │   ├── ui/                    # UI components (Button, Modal, Input)
+│   │   ├── cards/                 # Example component for cards (e.g., MovieCard)
+│   │   └── index.ts               # Central export for components
+│   │
+│   ├── hooks/                     # Custom React hooks
+│   │   ├── useFetch.ts            # Example custom hook for fetching data
+│   │   └── useAuth.ts             # Example custom hook for authentication
+│   │
+│   ├── lib/                       # Utility functions and helper code
+│   │   ├── api.ts                 # API calls or utilities
+│   │   ├── auth.ts                # Authentication logic
+│   │   └── fetcher.ts             # Example for data fetching utilities
+│   │
+│   ├── store/                     # Global state management (Zustand, Redux, or Context API)
+│   │   └── useStore.ts            # Example store for state management
+│   │
+│   ├── styles/                    # Global and module-level styles
+│   │   ├── globals.css            # Global CSS for the entire app
+│   │   ├── variables.module.css   # CSS variables for styling
+│   │   └── MovieCard.module.css   # CSS module for a specific component
+│   │
+│   ├── types/                     # TypeScript types and interfaces
+│   │   ├── movie.ts               # Movie-related types (e.g., Movie, Review)
+│   │   ├── user.ts                # User-related types (e.g., UserProfile)
+│   │   └── index.ts               # Central export for types
+│   │
+│   ├── utils/                     # Utility functions (e.g., date formatting)
+│   │   ├── formatDate.ts          # Date formatting utility
+│   │   └── capitalize.ts          # Capitalize text utility
+│   │
+│   └── context/                   # React Context for shared state (if needed)
+│       ├── AuthContext.tsx        # Auth-related context
+│       └── ThemeContext.tsx       # Theme-related context
+│
+├── .env.local                     # Environment variables (never commit)
+├── .gitignore                     # Files to be ignored by Git
+├── next.config.js                 # Next.js configuration file
+├── tsconfig.json                  # TypeScript configuration
+├── package.json                   # Project dependencies and scripts
+└── README.md                      # Project documentation
