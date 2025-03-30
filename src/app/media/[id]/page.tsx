@@ -14,7 +14,6 @@ export default async function MediaPage({ params }: { params: MediaPageProps}) {
             Media page <br></br>
             Media Id: {params.id} <br></br>
             Title: Dune, Part Two <br/> <br/> <br/>
-            <Link href={`/`}> Back to Home </Link>
         </div>
     );
 }

@@ -17,7 +17,6 @@ export default async function ProfilePage({ params }: { params: ProfilePageProps
             <Link href={`/${params.username}/favorites`}>Favorites</Link> <br></br>
             <Link href={`/${params.username}/top10`}>Top 10 List</Link> <br></br>
             <Link href={`/${params.username}/profile/settings`}>Profile settings</Link> <br></br>
-            <Link href={`/`}>Back to Home</Link>
         </div>
     );
 }
