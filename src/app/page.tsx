@@ -1,4 +1,6 @@
 import Link from "next/link";
+import MediaCard from "@components/ui/MediaCard.module";
+import styles from "@styles/pages/homepage.css";
 
 // TODO: Implement
 
@@ -10,7 +12,13 @@ export default function Home () {
     <div>
       This is the home page
       <br></br>
-      <Link href={`/media/${movieid}`}> Dune part two </Link>
+      <div className={styles.medialist}>
+        <MediaCard id={12345}></MediaCard>
+        <MediaCard id={12345}></MediaCard>
+        <MediaCard id={12345}></MediaCard>
+        <MediaCard id={12345}></MediaCard>
+        <MediaCard id={12345}></MediaCard>
+      </div>
     </div>
   );
 }
