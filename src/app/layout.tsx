@@ -1,3 +1,6 @@
+import '@styles/globals.css';
+import NavBar from '@/components/layout/Navbar.module';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,8 +8,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="container">
+        <NavBar/>
+        <div className="page">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -1,0 +1,17 @@
+.navbar {
+    padding: 20px 40px;
+    background-color: var(--color-dark2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right_links {
+    display: flex;
+    gap: 40px;
+}
+
+.link_text {
+    color: var(--color-textdark);
+    text-decoration: none;
+}
