@@ -1,6 +1,6 @@
 import Link from "next/link";
 import MediaCard from "@components/ui/MediaCard.module";
-import styles from "@styles/pages/homepage.css";
+import styles from "./src/styles/pages/homepage.module.css";
 
 // TODO: Implement
 
