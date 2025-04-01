@@ -1,0 +1,4 @@
+.medialist {
+    display: flex;
+    gap: 20px;
+}
