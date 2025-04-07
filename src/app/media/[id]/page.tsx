@@ -1,6 +1,4 @@
-"use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { fetchMediaPageData, postFavorite, postShare } from '@/lib/api';
 import Image from "next/image";
 import { FaHeart, FaShare } from 'react-icons/fa';
@@ -24,18 +22,19 @@ interface MediaPageData {
 
 // TODO: Implement
 
-export default function MediaPage({ params }: { params: MediaPageProps }) {
-    const [media, setMedia] = useState<MediaPageData | null>(null);
+export default async function MediaPage({ params }: { params: MediaPageProps }) {
+    // const [media, setMedia] = useState<MediaPageData | null>(null);
 
-    // Re-fetches data and re-render's component if the "id" prop changes (and on initial render)
-    useEffect(() => {
-        async function getMedia() {
-            console.log("hello");
-            const data = await fetchMediaPageData(params.id);
-            setMedia(data);
-        }
-        getMedia();
-    }, [params]);
+    // // Re-fetches data and re-render's component if the "id" prop changes (and on initial render)
+    // useEffect(() => {
+    //     async function getMedia() {
+    //         const data = await fetchMediaPageData(params.id);
+    //         setMedia(data);
+    //     }
+    //     getMedia();
+    // }, [params]);
+
+    const media = await fetchMediaPageData(params.id);
 
     // Loading state, can be prettied up later
     if (!media) return (
@@ -47,9 +46,7 @@ export default function MediaPage({ params }: { params: MediaPageProps }) {
 
     return (
         <div className={styles.mediapage}>
-            Media page <br></br>
-            Media Id: {params.id} <br></br>
-            Title: [Get from ID] <br /> <br /> <br />
+            {media.title} <br></br>
             <div className={styles.overlayButtons}>
                 <button className={styles.quickFavoriteButton}
                         // could reuse the functionality of hovering to make the buttons change color slightly like dim or something
