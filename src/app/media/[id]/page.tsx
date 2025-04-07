@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { fetchMediaPageData, postFavorite, postShare } from '@/lib/api';
 import Image from "next/image";
