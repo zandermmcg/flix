@@ -27,7 +27,6 @@ interface MediaPageData {
 export default function MediaPage({ id }: MediaPageProps ) {
     const [media, setMedia] = useState<MediaPageData | null>(null);
 
-    console.log(id);
 
     // Re-fetches data and re-render's component if the "id" prop changes (and on initial render)
     useEffect(() => {
