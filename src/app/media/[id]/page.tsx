@@ -1,19 +1,16 @@
-import Link from "next/link";
+import MediaPage from "@components/pages/MediaPage.module";
 
 interface MediaPageProps {
-    id: number
+    params: {
+        id: number
+    }
 }
 
-// TODO: Implement
-
-export default async function MediaPage({ params }: { params: MediaPageProps}) {
-    params = await params;
-
+export default function MediaPageRouter({ params }: MediaPageProps ) {
+    const id = Number(params.id);
     return (
         <div>
-            Media page <br></br>
-            Media Id: {params.id} <br></br>
-            Title: Dune, Part Two <br/> <br/> <br/>
+            <MediaPage id={id}></MediaPage>
         </div>
-    );
+    )
 }
