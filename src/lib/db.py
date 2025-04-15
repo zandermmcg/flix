@@ -2,12 +2,14 @@ import boto3
 from dotenv import load_dotenv
 import os
 
-load_dotenv("../../.env")
+# Load environment variables from .env file
+load_dotenv(".env")
 
+# Retrieve AWS credentials from environment variables
 access_key = os.getenv("AWS_ACCESS_KEY")
 secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
 
-
+# Initlize boto3 session with credentials
 session = boto3.Session(
     aws_access_key_id = access_key,
     aws_secret_access_key = secret_key,
