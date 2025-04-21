@@ -90,3 +90,12 @@ def searchall_movies(start, stop=1468452):
             sleep(0.025)
         except:
             continue
+
+
+# get newest movie
+r = requests.get("https://api.themoviedb.org/3/movie/latest", params = {
+        "api_key": API_KEY,
+        "language": "en-US"
+    })
+
+print(r.json())
