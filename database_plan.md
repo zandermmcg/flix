@@ -1,37 +1,57 @@
-User = {
-    PK userID: number,
-    username: string,
-    password: string,
-    email: string,
-    phone_number: number,
-    favorites: [mediaID, ...],
-    following: [userID, ...],
-    followers: [userID, ...],
-    lists: [listID, ...]
+Primary Key: TYPE#ID
+Sort Key: ATTRIBUTE
+TYPE = MOVIE,TV,USER
+ATTRIBUTE = PROFILE, INFO, COMMENT, RATING, FAVORITE
+
+USER
+{
+    PK: USER#ID
+    SK: PROFILE,FAVORITE,RATING,COMMENT.
 }
 
-Media = {
-    PK mediaID: number,
-    mediaType: string,
-    title: string,
-    description: string,
-    cast = [actorID, ...],
-    director = [directorID, ...],
-    episodes = [episodeID, ...]
-}
+PK: USER#ID
+    {
+        SK: PROFILE
+        picture: string
+        name: string
+        age: int
+        bio: string
+    }
+    {
+        SK: FAVORITE
 
-List = {
-    listID: number
-}
+    }
+    {
+        SK: RATING
 
-Episode = {
-    episodeID: number
-}
+    }
+    {
+        SK: COMMENT
 
-Actor = {
-    actorID: number
-}
+    }
+    {
+        SK: LIST
+        name: string
+        contents: int[] // list of id's
+    }
 
-Director = {
-    directorID: number
-}
+MEDIA_TYPE = MOVIE,TV
+PK: {MEDIA_TYPE}#ID
+    {
+        SK: INFO
+        id: int
+        name: string
+        rating: float
+        coverUrl: string
+        overview: string
+        budget: int
+        revenue: int
+        genres: string[]
+        originCountry: string[]
+        releaseDate: string
+        productionCompanies: string[]
+        spokenLanguages: string[]
+    }
+    {
+        SK: 
+    }
