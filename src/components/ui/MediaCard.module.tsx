@@ -74,7 +74,7 @@ export default function MediaCard({ id }: MediaCardProps) {
             />
             {isHovered && (
                 <div className={styles.overlay}>
-                    <h3 className={styles.overlayText}>{media.title}</h3>
+                    <h3 className={styles.overlayText}></h3>
                     <div className={styles.overlayButtons}>
                         <button className={styles.quickFavoriteButton}
                                 onMouseEnter={() => setIsHoveredButton(true)}

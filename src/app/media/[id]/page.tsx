@@ -6,11 +6,12 @@ interface MediaPageProps {
     }
 }
 
-export default function MediaPageRouter({ params }: MediaPageProps ) {
-    const id = Number(params.id);
+export default async function MediaPageRouter({ params }: MediaPageProps) {
+    const input = await params;
+    const mediaId = Number(input.id);
     return (
         <div>
-            <MediaPage id={id}></MediaPage>
+            <MediaPage id={mediaId}></MediaPage>
         </div>
     )
 }
