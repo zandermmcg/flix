@@ -36,19 +36,20 @@ PK: USER#ID
     }
 
 MEDIA_TYPE = MOVIE,TV
-PK: {MEDIA_TYPE}#ID
+pk: {MEDIA_TYPE}#ID
     {
-        SK: INFO
+        sk: INFO
         id: int
-        name: string
-        rating: float
-        coverUrl: string
+        title: string
+        releaseDate: string
         overview: string
+        runtime: int
+        rating: float
+        coverUrlPath: string
         budget: int
         revenue: int
         genres: string[]
         originCountry: string[]
-        releaseDate: string
         productionCompanies: string[]
         spokenLanguages: string[]
     }
