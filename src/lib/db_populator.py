@@ -19,6 +19,7 @@ SHUTDOWN_REQUESTED = False
 if not API_KEY:
     raise EnvironmentError("TMDB_API_KEY not defined in .env or cannot be accessed.")
 
+# Setup DynamoDB Table session
 session = boto3.Session(
     aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
     aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
@@ -41,7 +42,7 @@ def handle_shutdown(signum: int, frame: any) -> None:
     global SHUTDOWN_REQUESTED
     SHUTDOWN_REQUESTED = True
 
-# Register signal handlers
+# Register signal handlers for controlled shutdowns
 signal.signal(signal.SIGINT, handle_shutdown)   # Ctrl+C
 signal.signal(signal.SIGTERM, handle_shutdown)  # Docker/EC2 shutdown
 
@@ -179,10 +180,10 @@ if __name__ == '__main__':
     # searchall_movies(last+1)
 
 
-movie = fetch_by_id(726429, "movie")
+# movie = fetch_by_id(726429, "movie")
 # movie = search_by_title("Star Wars")["results"][0]
-pretty_json = json.dumps(transform(movie, "movie"), indent=4)
-print(pretty_json)
+# pretty_json = json.dumps(transform(movie, "movie"), indent=4)
+# print(pretty_json)
 
 ### UNUSED FUNCTIONS ###
 
